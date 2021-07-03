@@ -39,11 +39,36 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+function getFinalText(score) {
+    if (score > 0) {
+        return "\n\nCONGRATULATIONS! YOU WIN!";
+    }
+    else if (score < 0) {
+        return "\n\nSORRY! YOU LOSE!";
+    }
+    return "\n\nDRAW! BETTER LUCK NEXT TIME!";
+}
+
 function game() {
-    // play 5 rounds
-    //  track score
-    //  display winner/loser
-    let playerSelection = prompt('Enter selection', 'Rock/Paper/Scissors');
+    let score = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(
+            prompt('Enter selection', 'Rock/Paper/Scissors'), 
+            computerPlay()
+        );
+
+        console.log(result);
+        
+        if(result.includes('Win')){
+            score = score + 1;
+        } else if (result.includes('Lose')){
+            score = score - 1;
+        }
+    }
+
+    console.log(getFinalText(score));
+    console.log("SCORE: " + score);
 }
 
 game();
