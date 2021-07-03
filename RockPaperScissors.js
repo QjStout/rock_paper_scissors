@@ -39,7 +39,11 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
-const playerSelection = 'Rock';
-const computerSelection = computerPlay();
-let result = playRound(playerSelection, computerSelection);
-console.log(result);
+function game() {
+    // play 5 rounds
+    //  track score
+    //  display winner/loser
+    let playerSelection = prompt('Enter selection', 'Rock/Paper/Scissors');
+}
+
+game();
