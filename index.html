@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="./RockPaperScissors.js" async></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <h1 id="neon-title">Rock Paper Scissors</h1>
     
+    <div id="game-screen">
+        <div class="button" id="start-button">START</div>
+        <div id="game-scene" class="disabled-el">
+            <div id="scorecard-running">
+                <div class="scorecard-row">
+                    <h2 class="scorecard-column" id="score-title">PLAYER: </h2>
+                    <h3 class="scorecard-column" id="score-value" data-binding="p-score"></h3>
+                </div>
+                <div class="scorecard-row computer">
+                    <h2 class="scorecard-column" id="score-title">COMPUTER: </h2>
+                    <h3 class="scorecard-column" id="score-value" data-binding="c-score"></h3>
+                </div>
+            </div>
+            <p id="result">First to 5</br></br>Play your hand!</p>
+            <div id="restart" onclick="startNewGame()">
+                <img id="restart-icon" draggable="false" src="./_assets/restart.png">
+            </div>
+        </div>
+    </div>
+    
+    <div id="selection-container">
+        <div id="rock" class="rps-buttons">
+            <img class="rps-icons" draggable="false" src="./_assets/rock.png">
+        </div>
+        <div id="paper" class="rps-buttons">
+            <img class="rps-icons" draggable="false" src="./_assets/paper.png">
+        </div>
+        <div id="scissors" class="rps-buttons">
+            <img class="rps-icons" draggable="false" src="./_assets/scissors.png">
+        </div>
+    </div>
 </body>
 </html>
